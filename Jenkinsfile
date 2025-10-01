@@ -1,5 +1,10 @@
 pipeline {
     agent any
+
+    tools {
+        nodejs 'node-v22'
+    }
+
     stages {
         stage('Build') {
           steps {
