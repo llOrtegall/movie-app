@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  web_react:
+    image: nginx:alpine
+    container_name: web_react
+    restart: unless-stopped
+    volumes:
+      - ./webdata:/usr/share/nginx/html
+    networks:
+      - proxy_nginx
+
+networks:
+  proxy_nginx:
+    external: true
